@@ -39,12 +39,20 @@ function changeQuantity(cart, id, quantity) {
 
   return newCart;
 }
-function removeFromCart() {
-  return notImplemented();
+
+function removeFromCart(cart, id) {
+  const newCart = [...cart];
+  const indexProduct = cart.findIndex((item) => item.id === id);
+
+  if (indexProduct === -1) return newCart;
+  newCart.splice(indexProduct, 1);
+  return newCart;
 }
+
 function calculateCartSubtotal() {
   return notImplemented();
 }
+
 function calculateOrderTotal() {
   return notImplemented();
 }
